@@ -1,0 +1,6 @@
+<main>
+  <app-create-todo></app-create-todo>
+  <app-filter-todo [active]="(activeFilter$ | async) || {filter: 'all'}" (update)="changeFilter($event)"></app-filter-todo>
+  <app-todos [todos]='(todos$ | async) || []' (delete)="delete($event)" (complete)="complete($event)">
+  </app-todos>
+</main>

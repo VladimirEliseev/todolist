@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: SF;
+  src: url(../src/assets/sf-ui/sf-ui-display-medium-58646be638f96.otf) format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: SF;
+  src: url(../src/assets/sf-ui/sf-ui-display-light-58646b33e0551.otf) format("opentype");
+  font-weight: 300;
+}
+body{
+  background-color: #F7F8FA;
+  font-family: 'SF';
+}
+
+.select__dropdown {
+  width: 180px;
+  height: 40px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  margin-left: 8px;
+}

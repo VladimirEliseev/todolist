@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <div class='title'>Создать заметку</div>
+  <form [formGroup]="form" (ngSubmit)="add(input)">
+    <input styleClass='input__add' #input type="text" placeholder="Название заметки" pInputText
+      formControlName="name" />
+    <p-button styleClass='btn__add' type="submit">
+      <img src="/assets/send-icon.svg" alt="send">
+    </p-button>
+  </form>
+</div>

@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -10,8 +12,13 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    environment.production ? [] : AkitaNgDevtools.forRoot({}),
+    RouterModule.forRoot([
+      { path: '', loadChildren: () => import('./page/page.module').then(m => m.PageModule) }
+    ])
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

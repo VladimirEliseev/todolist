@@ -1,0 +1,13 @@
+<div class='wrapper'>
+  <div class='todos' *ngFor="let todo of todos">
+    <div class='todo'>
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+          <p-checkbox [ngModel]="todo.completed" [binary]="true" (ngModelChange)="change($event, todo)"></p-checkbox>
+        </span>
+        <input type=" text" pInputText placeholder={{todo.name}} readonly>
+        <button type="button" (click)="onDelete(todo.id)" pButton pRipple icon="pi pi-times" class='todo__btn_clear'
+          styleClass="p-button-danger"></button>
+      </div>
+    </div>
+  </div>
